@@ -7,4 +7,4 @@ def get_multiplied_digits(number):
     return first_digit * get_multiplied_digits(int(str_number[1:])) # Рекурсивный вызов
 
 result = get_multiplied_digits(40203)
-print((result))
+print(result)
