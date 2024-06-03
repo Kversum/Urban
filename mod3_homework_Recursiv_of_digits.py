@@ -1,15 +1,10 @@
 def get_multiplied_digits(number):
     str_number = str(number)
-    first = str_number[0]
-    if len(str_number) > 1:
-        for i in str_number[1:]:
-            if int(i) > 0:
-                temp = int(first) * (int(i))
-                first = temp
+    if len(str_number) == 1:
+        return int(str_number) # Базовый случай: возвращаем цифру, если она одна
     else:
-        result = first
-        return  result
-    result = first
-    return result
+        first_digit = int(str_number[0])
+    return first_digit * get_multiplied_digits(int(str_number[1:])) # Рекурсивный вызов
 
-print(get_multiplied_digits(40203))
+result = get_multiplied_digits(40203)
+print((result))
